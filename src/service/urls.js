@@ -1,2 +1,3 @@
 export const BASE_URL = 'https://fakestoreapi.com/';
-export const products = 'products';
+export const ALL_PRODUCTS = 'products';
+export const ALL_CATEGORIES = 'products/categories';
