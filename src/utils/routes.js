@@ -6,3 +6,4 @@ export const CARTSCREEN = 'Sepetim';
 export const TABMENU = 'Menü';
 export const NOTIFICATIONSSCREEN = 'Bildirimler';
 export const MESSAGESSCREEN = 'Mesajlar';
+export const PRODUCTSSCREEN = 'Ürünler';

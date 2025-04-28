@@ -6,6 +6,7 @@ const productItemStyles = StyleSheet.create({
   container: {
     flex: 1,
     width: screenWidth / 2 - 10,
+    height: screenWidth * 0.7,
     margin: 10,
     padding: 10,
     borderWidth: 1,
