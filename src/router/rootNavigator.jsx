@@ -1,8 +1,14 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {MESSAGESSCREEN, NOTIFICATIONSSCREEN, TABMENU} from '../utils/routes';
+import {
+  MESSAGESSCREEN,
+  NOTIFICATIONSSCREEN,
+  PRODUCTSSCREEN,
+  TABMENU,
+} from '../utils/routes';
 import TabNavigator from './tabNabigator';
 import NotificationsScreen from '../screens/notifications';
 import MessagesScreen from '../screens/messages';
+import ProductsScreen from '../screens/products';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +27,7 @@ export default function RootNavigator() {
         component={NotificationsScreen}
       />
       <Stack.Screen name={MESSAGESSCREEN} component={MessagesScreen} />
+      <Stack.Screen name={PRODUCTSSCREEN} component={ProductsScreen} />
     </Stack.Navigator>
   );
 }
