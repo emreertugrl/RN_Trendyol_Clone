@@ -1,0 +1,8 @@
+export const TRENDYOLGOSCREEN = 'Trendyol Go';
+export const FAVORİTESSCREEN = 'Favoriler';
+export const PROFILESCREEN = 'Hesabım';
+export const HOMESCREEN = 'Ana Sayfa';
+export const CARTSCREEN = 'Sepetim';
+export const TABMENU = 'Menü';
+export const NOTIFICATIONSSCREEN = 'Bildirimler';
+export const MESSAGESSCREEN = 'Mesajlar';

@@ -1,6 +1,7 @@
-import {View, Text} from 'react-native';
-import React, {useEffect} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 import BootSplash from 'react-native-bootsplash';
+import {useEffect} from 'react';
+import RootNavigator from './src/router/rootNavigator';
 
 export default function App() {
   useEffect(() => {
@@ -8,8 +9,8 @@ export default function App() {
   }, []);
 
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
   );
 }
