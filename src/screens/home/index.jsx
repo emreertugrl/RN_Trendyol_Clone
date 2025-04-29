@@ -1,25 +1,26 @@
-//import liraries
-import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, FlatList} from 'react-native';
+import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
+import widgets from '../../widgets/widget.json';
+import ForYou from '../../widgets/forYou';
+import BestSeller from '../../widgets/bestSeller';
+import Introductions from '../../widgets/introduction';
 
-// create a component
 const HomeScreen = () => {
+  const widgetItem = ({item}) => {
+    switch (item.name) {
+      case 'introduction':
+        return <Introductions item={item} />;
+      case 'bestSeller':
+        return <BestSeller item={item} />;
+      case 'forYou':
+        return <ForYou item={item} />;
+    }
+  };
   return (
-    <View style={styles.container}>
-      <Text>HomeScreen</Text>
+    <View style={defaultScreenStyle.container}>
+      <FlatList data={widgets} renderItem={widgetItem} />
     </View>
   );
 };
 
-// define your styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-});
-
-//make this component available to the app
 export default HomeScreen;

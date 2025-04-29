@@ -3,6 +3,9 @@ import {getAllProducts} from '../actions/productsActions';
 
 const initialState = {
   products: [],
+  bestSellerProducts: [],
+  forYouProducts: [],
+  products: [],
   pending: false,
   error: null,
 };
@@ -23,6 +26,12 @@ const productsSlice = createSlice({
       .addCase(getAllProducts.fulfilled, (state, action) => {
         state.pending = false;
         state.products = action.payload;
+        if (action.meta.arg.category === "men's clothing") {
+          state.bestSellerProducts = action.payload;
+        }
+        if (action.meta.arg.category === "women's clothing") {
+          state.forYouProducts = action.payload;
+        }
       });
   },
 });
