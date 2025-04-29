@@ -1,11 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {getAllProducts} from '../actions/productsActions';
+import {getAllProducts, getProductDetail} from '../actions/productsActions';
 
 const initialState = {
   products: [],
   bestSellerProducts: [],
   forYouProducts: [],
-  products: [],
+  product: {},
   pending: false,
   error: null,
 };
@@ -32,6 +32,18 @@ const productsSlice = createSlice({
         if (action.meta.arg.category === "women's clothing") {
           state.forYouProducts = action.payload;
         }
+      })
+      .addCase(getProductDetail.pending, state => {
+        state.pending = true;
+        state.product = {};
+      })
+      .addCase(getProductDetail.rejected, (state, action) => {
+        state.pending = false;
+        state.error = action.error;
+      })
+      .addCase(getProductDetail.fulfilled, (state, action) => {
+        state.pending = false;
+        state.product = action.payload;
       });
   },
 });

@@ -7,3 +7,4 @@ export const TABMENU = 'Menü';
 export const NOTIFICATIONSSCREEN = 'Bildirimler';
 export const MESSAGESSCREEN = 'Mesajlar';
 export const PRODUCTSSCREEN = 'Ürünler';
+export const PRODUCTDETAILSSCREEN = 'Ürün Detayı';

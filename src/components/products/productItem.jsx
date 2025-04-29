@@ -1,10 +1,18 @@
 import {Pressable, Image, Text, View} from 'react-native';
 import productItemStyles from '../../styles/productItemStyle';
 import {Heart, Star1} from 'iconsax-react-nativejs';
+import {useNavigation} from '@react-navigation/native';
+import {PRODUCTDETAILSSCREEN} from '../../utils/routes';
 
 const ProductItem = ({item}) => {
+  const navigation = useNavigation();
+
   return (
-    <Pressable style={productItemStyles.container}>
+    <Pressable
+      onPress={() =>
+        navigation.navigate(PRODUCTDETAILSSCREEN, {productId: item.id})
+      }
+      style={productItemStyles.container}>
       <Image source={{uri: item.image}} style={productItemStyles.image} />
       <Text style={productItemStyles.title} numberOfLines={2}>
         {item.title}
